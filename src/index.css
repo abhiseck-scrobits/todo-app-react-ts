@@ -1,0 +1,208 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:600&display=swap");
+
+:root {
+  --black-50: #e1eaee;
+  --black-100: #ccd6da;
+  --black-200: #9aacb5;
+  --black-300: #678391;
+  --black-400: #35596c;
+  --black-500: #023047;
+  --black-600: #022639;
+  --black-700: #011d2b;
+  --black-800: #01131c;
+  --black-900: #000a0e;
+  --red-100: #fcdae2;
+  --red-200: #f9b5c5;
+  --red-300: #f591a9;
+  --red-400: #f26c8c;
+  --red-500: #ef476f;
+  --red-600: #bf3959;
+  --red-700: #8f2b43;
+  --red-800: #601c2c;
+  --red-900: #300e16;
+}
+input {
+  min-width: 0;
+}
+body,
+#root {
+  font-family: "Source Sans Pro", sans-serif;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: var(--black-100);
+}
+
+.App {
+  border-radius: 8px;
+  background-color: var(--black-50);
+  height: calc(100% - 4rem);
+  max-width: 500px;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1),
+    0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+.App > .Title {
+  flex: none;
+  /* border-bottom: 1px solid var(--black-100); */
+  padding: 1rem;
+}
+.App > .Title > h1 {
+  color: var(--black-500);
+  letter-spacing: 4px;
+  text-align: center;
+  margin: 0;
+  margin-bottom: 0.5rem;
+}
+.App > .Title > .Link-List {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.App > .Title > .Link-List > .Dot {
+  border-radius: 999px;
+  height: 6px;
+  width: 6px;
+  margin: 0 6px;
+  background-color: var(--black-500);
+}
+.App > .Title > .Link-List > a {
+  font-size: 18px;
+  text-decoration: none;
+  color: var(--black-500);
+}
+
+.App > .List {
+  overflow: auto;
+  flex: 1 1 0%;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: end;
+  gap: 16px;
+}
+.App > .List > .Todo {
+  align-items: center;
+  flex: none;
+  display: flex;
+  gap: 6px;
+  padding: 0 1rem;
+}
+.App > .List > .Todo > input[type="checkbox"] {
+  height: 36px;
+  width: 36px;
+  border-radius: 4px;
+  flex: none;
+  padding: 0.5rem 1rem;
+  font-size: 20px;
+  color: var(--black-600);
+  outline: none;
+  background: var(--black-50);
+  border: 1px solid var(--black-300);
+}
+.App > .List > .Todo > input[type="text"] {
+  border-radius: 4px;
+  flex: 1 1 0%;
+  padding: 0.5rem 1rem;
+  font-size: 20px;
+  color: var(--black-600);
+  outline: none;
+  background-color: var(--black-50);
+  border: 1px solid var(--black-300);
+}
+.App > .List > .Todo > textarea {
+  border-radius: 4px;
+  flex: 1 1 0%;
+  padding: 0.5rem 1rem;
+  font-size: 20px;
+  color: var(--black-600);
+  outline: none;
+  background-color: var(--black-50);
+  border: 1px solid var(--black-300);
+}
+.App > .List > .Todo > textarea:focus {
+  background-color: white;
+}
+.App > .List > .Todo > textarea:disabled {
+  border: 1px solid transparent;
+}
+.App > .List > .Todo > input[type="text"]:focus {
+  background-color: white;
+}
+.App > .List > .Todo > input[type="text"]:disabled {
+  border: 1px solid transparent;
+}
+.App > .List > .Todo > button {
+  user-select: none;
+  width: 41px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  font-size: 20px;
+  outline: none;
+  height: 100%;
+  color: var(--black-600);
+  background-color: var(--black-50);
+  letter-spacing: 4px;
+  font-weight: 600;
+  flex: none;
+  border: 1px solid var(--black-300);
+}
+.App > .List > .Todo > button:hover {
+  background-color: var(--black-100);
+}
+
+.App > .Action {
+  flex: none;
+  display: flex;
+  gap: 8px;
+  padding: 1rem;
+}
+.App > .Action > input {
+  border-radius: 4px;
+  flex: 1 1 0%;
+  padding: 0.5rem 1rem;
+  font-size: 20px;
+  color: var(--black-600);
+  outline: none;
+  background-color: var(--black-50);
+  border: 1px solid var(--black-300);
+}
+.App > .Action > input:focus {
+  background-color: white;
+}
+.App > .Action > button {
+  user-select: none;
+  border-radius: 4px;
+  font-size: 20px;
+  outline: none;
+  padding: 0.5rem 1rem;
+  color: var(--black-600);
+  background-color: var(--black-50);
+  letter-spacing: 4px;
+  font-weight: 600;
+  flex: none;
+  border: 1px solid var(--black-300);
+}
+.App > .Action > button:hover {
+  background-color: var(--black-100);
+}
+
+@media (max-width: 640px) {
+  body,
+  #root {
+    overflow: auto;
+  }
+  .App {
+    height: calc(100% - 2rem);
+    min-width: 280px;
+    max-width: calc(100% - 2rem);
+    margin: 1rem;
+  }
+}
